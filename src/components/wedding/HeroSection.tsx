@@ -20,12 +20,12 @@ const HeroSection = () => {
       </div>
 
       {/* Decorative floral elements - Top Left */}
-      <div className="absolute top-0 left-0 w-32 md:w-48 opacity-70 -rotate-12">
+      {/* <div className="absolute top-0 left-0 w-32 md:w-48 opacity-40 -rotate-12">
         <img src={floralDecoration} alt="" className="w-full h-auto" />
-      </div>
+      </div> */}
 
       {/* Decorative floral elements - Bottom Left */}
-      <div className="absolute bottom-0 left-0 w-40 md:w-56 opacity-60 rotate-45 -translate-x-1/4">
+      <div className="absolute bottom-0 left-0 w-40 md:w-56 opacity-35 rotate-45 -translate-x-1/4">
         <img src={floralDecoration} alt="" className="w-full h-auto" />
       </div>
 
@@ -41,7 +41,7 @@ const HeroSection = () => {
             </h1>
 
             {/* Subtitle */}
-            <p className="font-serif text-base md:text-lg text-muted-foreground mb-8 max-w-md mx-auto lg:mx-0 animate-fade-in-up animation-delay-200">
+            <p className="font-serif text-base md:text-lg mb-8 max-w-md mx-auto lg:mx-0 animate-fade-in-up animation-delay-200">
               Nous vous invitons à célébrer notre union et à partager ce moment de bonheur avec nous.
             </p>
 
@@ -55,15 +55,15 @@ const HeroSection = () => {
             {/* Date Button */}
             <div className="mb-6 animate-fade-in-up animation-delay-400">
               <span className="inline-block bg-primary text-primary-foreground font-serif text-sm md:text-base tracking-wider uppercase px-6 py-3 rounded-md shadow-sm">
-                1er Novembre 2026
+                10 Novembre 2026
               </span>
             </div>
 
             {/* Location */}
-            <div className="font-serif text-sm md:text-base text-muted-foreground space-y-1 mb-10 animate-fade-in-up animation-delay-600">
+            <div className="font-serif text-sm md:text-base space-y-1 mb-10 animate-fade-in-up animation-delay-600">
               <p>Château des Roses,</p>
               <p>456 Avenue des Jardins,</p>
-              <p>Paris, France</p>
+              <p>Montréal, France</p>
             </div>
 
             {/* Countdown */}
@@ -72,21 +72,38 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Side - Circular Photo with Decorations */}
+          {/* Right Side - Circular Photo with Floral Frame */}
           <div className="relative flex justify-center order-1 lg:order-2 animate-scale-in">
-            {/* Decorative florals around photo */}
-            <div className="absolute -top-8 -right-4 w-24 md:w-32 opacity-80 rotate-12">
-              <img src={floralDecoration} alt="" className="w-full h-auto" />
-            </div>
-            <div className="absolute -bottom-8 -left-4 w-28 md:w-36 opacity-80 -rotate-45">
-              <img src={floralDecoration} alt="" className="w-full h-auto" />
-            </div>
-            <div className="absolute top-1/2 -right-8 w-20 md:w-24 opacity-60 rotate-90 hidden lg:block">
-              <img src={floralDecoration} alt="" className="w-full h-auto" />
-            </div>
-
             {/* Circular Photo Frame */}
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+              {/* Floral frame around the photo */}
+              <div className="pointer-events-none absolute inset-0 -m-6 md:-m-8 lg:-m-10">
+                {/* Top-left corner */}
+                {/* <img
+                  src={floralDecoration}
+                  alt=""
+                  className="absolute -top-6 -left-6 w-24 md:w-32 lg:w-40 opacity-60 rotate-0"
+                /> */}
+                {/* Top-right corner */}
+                <img
+                  src={floralDecoration}
+                  alt=""
+                  className="absolute -top-6 -right-6 w-24 md:w-32 lg:w-40 opacity-60 rotate-90"
+                />
+                {/* Bottom-right corner */}
+                <img
+                  src={floralDecoration}
+                  alt=""
+                  className="absolute -bottom-6 -right-6 w-24 md:w-32 lg:w-40 opacity-60 rotate-180"
+                />
+                {/* Bottom-left corner */}
+                <img
+                  src={floralDecoration}
+                  alt=""
+                  className="absolute -bottom-6 -left-6 w-24 md:w-32 lg:w-40 opacity-60 -rotate-90"
+                />
+              </div>
+
               {/* Outer ring decoration */}
               <div className="absolute inset-0 rounded-full border-2 border-primary/20 scale-110" />
               
@@ -106,7 +123,7 @@ const HeroSection = () => {
       {/* Scroll indicator */}
       <a
         href="#histoire"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors animate-float"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 hover:text-primary transition-colors animate-float"
       >
         <span className="font-serif text-xs tracking-widest uppercase">Découvrir</span>
         <ChevronDown className="w-5 h-5" />
