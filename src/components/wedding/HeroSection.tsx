@@ -1,78 +1,112 @@
 import { Heart, ChevronDown } from 'lucide-react';
-import coupleLake from '@/assets/couple-lake.jpg';
+import coupleVeil from '@/assets/couple-veil.jpg';
+import watercolorBg from '@/assets/watercolor-bg.jpg';
+import floralDecoration from '@/assets/floral-decoration.png';
 import Countdown from './Countdown';
 
 const HeroSection = () => {
   return (
     <section
       id="accueil"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Background Image */}
+      {/* Watercolor Background */}
       <div className="absolute inset-0">
         <img
-          src={coupleLake}
-          alt="Jonathan et Sarah"
-          className="w-full h-full object-cover object-right"
+          src={watercolorBg}
+          alt=""
+          className="w-full h-full object-cover"
         />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background" />
-        <div className="absolute inset-0 bg-foreground/10" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 py-20">
-        {/* Elegant card backdrop */}
-        <div className="relative inline-block">
-          {/* Circular/oval backdrop */}
-          <div className="absolute inset-0 -inset-x-12 -inset-y-8 md:-inset-x-20 md:-inset-y-12 bg-background/90 backdrop-blur-sm rounded-full shadow-xl" />
-          
-          {/* Content inside card */}
-          <div className="relative px-8 py-6 md:px-16 md:py-10">
-            {/* Decorative element */}
-            <div className="flex justify-center mb-4 animate-fade-in">
-              <Heart className="w-5 h-5 text-primary fill-primary/50 animate-pulse-soft" />
-            </div>
+      {/* Decorative floral elements - Top Left */}
+      <div className="absolute top-0 left-0 w-32 md:w-48 opacity-70 -rotate-12">
+        <img src={floralDecoration} alt="" className="w-full h-auto" />
+      </div>
 
-            {/* Pre-title */}
-            <p className="font-serif text-xs md:text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 animate-fade-in-up">
-              Nous allons nous marier
+      {/* Decorative floral elements - Bottom Left */}
+      <div className="absolute bottom-0 left-0 w-40 md:w-56 opacity-60 rotate-45 -translate-x-1/4">
+        <img src={floralDecoration} alt="" className="w-full h-auto" />
+      </div>
+
+      {/* Content Container */}
+      <div className="relative z-10 container mx-auto px-4 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Side - Text Content */}
+          <div className="text-center lg:text-left order-2 lg:order-1">
+            {/* Names */}
+            <h1 className="font-script text-5xl md:text-6xl lg:text-7xl text-foreground mb-4 animate-fade-in-up">
+              Jonathan <span className="text-primary">&</span> Sarah
+            </h1>
+
+            {/* Subtitle */}
+            <p className="font-serif text-base md:text-lg text-muted-foreground mb-8 max-w-md mx-auto lg:mx-0 animate-fade-in-up animation-delay-200">
+              Nous vous invitons à célébrer notre union et à partager ce moment de bonheur avec nous.
             </p>
 
-            {/* Names */}
-            <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-primary mb-2 animate-fade-in-up animation-delay-200">
-              Jonathan
-            </h1>
-            <div className="flex items-center justify-center gap-4 my-2 animate-fade-in-up animation-delay-200">
-              <span className="h-px w-10 md:w-16 bg-primary/40" />
-              <span className="font-serif text-base text-muted-foreground italic">- et -</span>
-              <span className="h-px w-10 md:w-16 bg-primary/40" />
+            {/* Decorative divider with heart */}
+            <div className="flex items-center justify-center lg:justify-start gap-4 mb-8 animate-fade-in-up animation-delay-400">
+              <span className="h-px w-16 bg-foreground/30" />
+              <Heart className="w-5 h-5 text-primary" strokeWidth={1.5} />
+              <span className="h-px w-16 bg-foreground/30" />
             </div>
-            <h1 className="font-script text-5xl md:text-7xl lg:text-8xl text-primary mb-6 animate-fade-in-up animation-delay-400">
-              Sarah
-            </h1>
 
-            {/* Date */}
-            <div className="animate-fade-in-up animation-delay-600">
-              <div className="flex items-center justify-center gap-2 md:gap-4">
-                <span className="font-serif text-sm md:text-base tracking-wider text-muted-foreground">Novembre</span>
-                <span className="font-serif text-3xl md:text-4xl font-semibold text-foreground border-x border-primary/30 px-3 md:px-4">01</span>
-                <span className="font-serif text-sm md:text-base tracking-wider text-muted-foreground">2026</span>
+            {/* Date Button */}
+            <div className="mb-6 animate-fade-in-up animation-delay-400">
+              <span className="inline-block bg-primary text-primary-foreground font-serif text-sm md:text-base tracking-wider uppercase px-6 py-3 rounded-md shadow-sm">
+                1er Novembre 2026
+              </span>
+            </div>
+
+            {/* Location */}
+            <div className="font-serif text-sm md:text-base text-muted-foreground space-y-1 mb-10 animate-fade-in-up animation-delay-600">
+              <p>Château des Roses,</p>
+              <p>456 Avenue des Jardins,</p>
+              <p>Paris, France</p>
+            </div>
+
+            {/* Countdown */}
+            <div className="animate-fade-in-up animation-delay-800">
+              <Countdown targetDate={new Date('2026-11-01T14:00:00')} />
+            </div>
+          </div>
+
+          {/* Right Side - Circular Photo with Decorations */}
+          <div className="relative flex justify-center order-1 lg:order-2 animate-scale-in">
+            {/* Decorative florals around photo */}
+            <div className="absolute -top-8 -right-4 w-24 md:w-32 opacity-80 rotate-12">
+              <img src={floralDecoration} alt="" className="w-full h-auto" />
+            </div>
+            <div className="absolute -bottom-8 -left-4 w-28 md:w-36 opacity-80 -rotate-45">
+              <img src={floralDecoration} alt="" className="w-full h-auto" />
+            </div>
+            <div className="absolute top-1/2 -right-8 w-20 md:w-24 opacity-60 rotate-90 hidden lg:block">
+              <img src={floralDecoration} alt="" className="w-full h-auto" />
+            </div>
+
+            {/* Circular Photo Frame */}
+            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+              {/* Outer ring decoration */}
+              <div className="absolute inset-0 rounded-full border-2 border-primary/20 scale-110" />
+              
+              {/* Photo container */}
+              <div className="w-full h-full rounded-full overflow-hidden shadow-xl border-4 border-background">
+                <img
+                  src={coupleVeil}
+                  alt="Jonathan et Sarah"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Countdown - outside the card */}
-        <div className="mt-10 animate-fade-in-up animation-delay-800">
-          <Countdown targetDate={new Date('2026-11-01T14:00:00')} />
         </div>
       </div>
 
       {/* Scroll indicator */}
       <a
         href="#histoire"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground/60 hover:text-primary transition-colors animate-float"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors animate-float"
       >
         <span className="font-serif text-xs tracking-widest uppercase">Découvrir</span>
         <ChevronDown className="w-5 h-5" />
