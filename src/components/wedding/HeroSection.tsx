@@ -68,7 +68,7 @@ const HeroSection = () => {
 
             {/* Countdown */}
             <div className="animate-fade-in-up animation-delay-800">
-              <Countdown targetDate={new Date('2026-11-01T14:00:00')} />
+              <Countdown targetDate={new Date('2026-11-10T14:00:00')} />
             </div>
           </div>
 
