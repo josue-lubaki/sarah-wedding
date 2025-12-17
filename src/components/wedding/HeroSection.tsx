@@ -1,5 +1,5 @@
 import { Heart, ChevronDown } from 'lucide-react';
-import coupleHero from '@/assets/couple-hero.jpg';
+import coupleLake from '@/assets/couple-lake.jpg';
 import Countdown from './Countdown';
 
 const HeroSection = () => {
@@ -11,9 +11,9 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={coupleHero}
+          src={coupleLake}
           alt="Jonathan et Sarah"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-right"
         />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background" />
