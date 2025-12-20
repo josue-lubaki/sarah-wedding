@@ -42,19 +42,19 @@ const StorySection = () => {
 
         {/* Couple Introduction */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-20">
-          {/* Jonathan */}
+          {/* Christian */}
           <div className="flex flex-col items-center text-center">
             <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-background shadow-lg mb-6">
               <img
                 src={coupleLake}
-                alt="Jonathan"
+                alt="Christian"
                 className="w-full h-full object-cover object-center"
               />
             </div>
             <span className="font-serif text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2">
               Le Marié
             </span>
-            <h3 className="font-script text-3xl text-foreground mb-3">Jonathan</h3>
+            <h3 className="font-script text-3xl text-foreground mb-3">Christian</h3>
             <p className="font-serif text-muted-foreground max-w-xs">
               Passionné et rêveur, il cherchait l'amour sans le savoir. Jusqu'au jour où Sarah est entrée dans sa vie.
             </p>
@@ -74,7 +74,7 @@ const StorySection = () => {
             </span>
             <h3 className="font-script text-3xl text-foreground mb-3">Sarah</h3>
             <p className="font-serif text-muted-foreground max-w-xs">
-              Lumineuse et pleine de vie, elle a su captiver le cœur de Jonathan dès leur première rencontre.
+              Lumineuse et pleine de vie, elle a su captiver le cœur de Christian dès leur première rencontre.
             </p>
           </div>
         </div>

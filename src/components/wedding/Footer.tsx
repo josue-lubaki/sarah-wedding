@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 text-center">
         {/* Names */}
         <div className="flex items-center justify-center gap-3 mb-4">
-          <span className="font-script text-3xl text-foreground">Jonathan</span>
+          <span className="font-script text-3xl text-foreground">Christian</span>
           <Heart className="w-5 h-5 text-primary fill-primary/50" />
           <span className="font-script text-3xl text-foreground">Sarah</span>
         </div>
@@ -28,7 +28,7 @@ const Footer = () => {
 
         {/* Hashtag */}
         <p className="mt-6 font-serif text-xs tracking-[0.2em] uppercase text-primary">
-          #JonathanEtSarah2026
+          #ChristianEtSarah2026
         </p>
       </div>
     </footer>

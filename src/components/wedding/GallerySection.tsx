@@ -6,7 +6,7 @@ import coupleVeil from '@/assets/couple-veil.jpg';
 
 const GallerySection = () => {
   const images = [
-    { src: coupleHero, alt: 'Jonathan et Sarah dans la forêt', span: 'md:col-span-2 md:row-span-2' },
+    { src: coupleHero, alt: 'Christian et Sarah dans la forêt', span: 'md:col-span-2 md:row-span-2' },
     { src: coupleEmbrace, alt: 'Moment d\'intimité', span: '' },
     { src: coupleLake, alt: 'Au bord du lac', span: '' },
     { src: coupleVeil, alt: 'Sous le voile', span: 'md:col-span-2' },

@@ -37,7 +37,7 @@ const HeroSection = () => {
           <div className="text-center lg:text-left order-2 lg:order-1">
             {/* Names */}
             <h1 className="font-script text-5xl md:text-6xl lg:text-7xl text-foreground mb-4 animate-fade-in-up">
-              Jonathan <span className="text-primary">&</span> Sarah
+              Christian <span className="text-primary">&</span> Sarah
             </h1>
 
             {/* Subtitle */}
@@ -111,7 +111,7 @@ const HeroSection = () => {
               <div className="w-full h-full rounded-full overflow-hidden shadow-xl border-4 border-background">
                 <img
                   src={coupleVeil}
-                  alt="Jonathan et Sarah"
+                  alt="Christian et Sarah"
                   className="w-full h-full object-cover"
                 />
               </div>
