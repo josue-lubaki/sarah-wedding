@@ -123,7 +123,7 @@ const HeroSection = () => {
       {/* Scroll indicator */}
       <a
         href="#histoire"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 hover:text-primary transition-colors animate-float"
+        className="absolute bottom-4 md:bottom-4 left-0 right-0 mx-auto flex flex-col items-center gap-2 hover:text-primary transition-colors animate-float w-fit"
       >
         <span className="font-serif text-xs tracking-widest uppercase">Découvrir</span>
         <ChevronDown className="w-5 h-5" />
