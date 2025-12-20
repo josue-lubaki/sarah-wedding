@@ -36,7 +36,7 @@ const Navigation = () => {
             className="flex items-center gap-2 group"
           >
             <span className="font-script text-3xl text-primary group-hover:text-primary/80 transition-colors">
-              J
+              C
             </span>
             <Heart className="w-4 h-4 text-primary fill-primary/30" />
             <span className="font-script text-3xl text-primary group-hover:text-primary/80 transition-colors">
