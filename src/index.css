@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Local font — Alex Brush */
+@font-face {
+  font-family: 'Alex Brush';
+  src: url('/assets/font/AlexBrush-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Wedding Invitation Design System - Romantic & Elegant */
 
 @layer base {
@@ -26,7 +35,7 @@
 
     /* Warm cream muted */
     --muted: 35 30% 93%;
-    --muted-foreground: 30 10% 45%;
+    --muted-foreground: 0 0% 8%;
 
     /* Blush accent */
     --accent: 350 35% 90%;
@@ -133,16 +142,19 @@
 
   html {
     scroll-behavior: smooth;
+    font-size: 18px;
   }
 }
 
 @layer components {
   .font-script {
-    font-family: 'Great Vibes', cursive;
+    /*font-family: 'Playfair Display', serif;*/
+    font-family: 'Alex Brush', serif;
   }
 
   .font-serif {
     font-family: 'Cormorant Garamond', serif;
+    /*font-family: 'Alex Brush', serif;*/
   }
 }
 

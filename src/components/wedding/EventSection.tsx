@@ -4,19 +4,21 @@ const EventSection = () => {
   const events = [
     {
       icon: Church,
-      title: 'La Cérémonie',
-      time: '14h00',
-      location: 'Église Saint-Pierre',
-      address: '123 Rue de la Paix, Paris',
+      title: 'Bénédiction Nuptiale',
+      time: '13h00',
+      location: 'Église La Promesse',
+      address: '500 Rue de Port-Royal O, Montréal, Québec, H3L 2B8',
+      mapsUrl: 'https://maps.google.com/?q=500+Rue+de+Port-Royal+O,+Montréal,+Québec,+H3L+2B8',
       description: 'Cérémonie religieuse en présence de nos familles et amis proches.',
     },
     {
       icon: PartyPopper,
-      title: 'La Réception',
-      time: '17h00',
-      location: 'Château des Roses',
-      address: '456 Avenue des Jardins, Paris',
-      description: 'Cocktail, dîner et festivités dans un cadre enchanteur.',
+      title: 'Salle de Réception',
+      time: '18h00',
+      location: 'Amiens',
+      address: '8700 Boulevard Langelier, Saint-Léonard, Québec, H1P 3C6',
+      mapsUrl: 'https://maps.google.com/?q=8700+Boulevard+Langelier,+Saint-Léonard,+Québec,+H1P+3C6',
+      description: 'Cocktail, dîner et festivités pour célébrer notre union.',
     },
   ];
 
@@ -31,7 +33,7 @@ const EventSection = () => {
           </h2>
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="h-px w-12 bg-primary/30" />
-            <span className="font-serif text-lg text-primary">1er Novembre 2026</span>
+            <span className="font-serif text-lg text-primary">26 Septembre 2026</span>
             <span className="h-px w-12 bg-primary/30" />
           </div>
           <p className="font-serif text-muted-foreground max-w-lg mx-auto">
@@ -64,10 +66,17 @@ const EventSection = () => {
 
               {/* Location */}
               <div className="flex items-start gap-2 mb-4">
-                <MapPin className="w-4 h-4 text-muted-foreground mt-1" />
+                <MapPin className="w-4 h-4 text-muted-foreground mt-1 shrink-0" />
                 <div>
                   <p className="font-serif font-medium text-foreground">{event.location}</p>
-                  <p className="font-serif text-sm text-muted-foreground">{event.address}</p>
+                  <a
+                    href={event.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-serif text-sm text-primary hover:underline"
+                  >
+                    {event.address}
+                  </a>
                 </div>
               </div>
 

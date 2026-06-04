@@ -1,12 +1,13 @@
 export const WEDDING_CONFIG = {
   // Interac details
   interac: {
-    email: 'josuelubaki@gmail.com', // À remplacer par votre vrai email Interac
+    email: 'msarahpascale@gmail.com',
   },
 
   // Formspree configuration
   formspree: {
     formId: import.meta.env.VITE_FORMSPREE_FORM_ID || 'xwvnkovl',
+    cancellationFormId: import.meta.env.VITE_FORMSPREE_CANCELLATION_FORM_ID || 'maqkrjbn',
   },
 
   // Invitation PDF URL

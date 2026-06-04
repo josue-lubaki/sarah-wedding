@@ -1,4 +1,4 @@
-import { Gift, Copy, Check } from 'lucide-react';
+import { Gift, Copy, Check, Info } from 'lucide-react';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
@@ -66,6 +66,18 @@ const InteracSection = () => {
                     </>
                   )}
                 </Button>
+              </div>
+            </div>
+
+            {/* Important notice */}
+            <div className="flex gap-3 bg-accent/60 border-l-4 border-primary rounded-md p-4 mb-6">
+              <Info className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+              <div>
+                <p className="font-serif font-semibold text-foreground text-sm mb-1">Important</p>
+                <p className="font-serif text-sm text-foreground">
+                  Le virement Interac confirme officiellement votre place au mariage.
+                  En cas d'annulation, vous serez remboursé intégralement.
+                </p>
               </div>
             </div>
 

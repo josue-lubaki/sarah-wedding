@@ -1,15 +1,20 @@
 import { Camera } from 'lucide-react';
-import coupleHero from '@/assets/couple-hero.jpg';
-import coupleEmbrace from '@/assets/couple-embrace.jpg';
-import coupleLake from '@/assets/couple-lake.jpg';
-import coupleVeil from '@/assets/couple-veil.jpg';
+import couple1 from '@/assets/couple-accolade.png';
+import couple2 from '@/assets/couple-eye-contant.png';
+import couple3 from '@/assets/couple-repos2.png';
+import couple4 from '@/assets/couple-check-smile.png';
+import couple5 from '@/assets/couple-main.png';
+import couple6 from '@/assets/couple-my-man2.png';
+
 
 const GallerySection = () => {
   const images = [
-    { src: coupleHero, alt: 'Christian et Sarah dans la forêt', span: 'md:col-span-2 md:row-span-2' },
-    { src: coupleEmbrace, alt: 'Moment d\'intimité', span: '' },
-    { src: coupleLake, alt: 'Au bord du lac', span: '' },
-    { src: coupleVeil, alt: 'Sous le voile', span: 'md:col-span-2' },
+    { src: couple1, alt: 'Christian et Sarah dans la forêt', span: 'md:col-span-2 md:row-span-2' },
+    { src: couple2, alt: 'Moment d\'intimité', span: '' },
+    { src: couple3, alt: 'Au bord du lac', span: '', style: { transform: 'translateX(20px) scale(1.2)' } },
+    { src: couple4, alt: 'Sous le voile', span: 'md:col-span-2', style: { transform: 'translateX(20px) scale(1.2)' } },
+    { src: couple5, alt: 'Sous le voile', span: 'md:col-span-2', style: { transform: 'translateX(20px) scale(1.2)' } },
+    { src: couple6, alt: 'Sous le voile', span: 'md:col-span-2', style: { transform: 'translateX(20px) scale(1.2)' } },
   ];
 
   return (
@@ -37,6 +42,7 @@ const GallerySection = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
+                  style={image.style}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>

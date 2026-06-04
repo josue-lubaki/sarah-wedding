@@ -1,5 +1,5 @@
 import { Heart, ChevronDown } from 'lucide-react';
-import coupleVeil from '@/assets/couple-veil.jpg';
+import couple_accolade from '@/assets/couple-accolade.png';
 import watercolorBg from '@/assets/watercolor-bg.jpg';
 import floralDecoration from '@/assets/floral-decoration.png';
 import Countdown from './Countdown';
@@ -55,20 +55,20 @@ const HeroSection = () => {
             {/* Date Button */}
             <div className="mb-6 animate-fade-in-up animation-delay-400">
               <span className="inline-block bg-primary text-primary-foreground font-serif text-sm md:text-base tracking-wider uppercase px-6 py-3 rounded-md shadow-sm">
-                10 Novembre 2026
+                26 Septembre 2026
               </span>
             </div>
 
             {/* Location */}
             <div className="font-serif text-sm md:text-base space-y-1 mb-10 animate-fade-in-up animation-delay-600">
-              <p>Château des Roses,</p>
-              <p>456 Avenue des Jardins,</p>
-              <p>Montréal, France</p>
+              <p>Église La Promesse · 13h00</p>
+              <p>500 Rue de Port-Royal O, Montréal</p>
+              <p>Salle Amiens · 18h00 — Saint-Léonard</p>
             </div>
 
             {/* Countdown */}
             <div className="animate-fade-in-up animation-delay-800">
-              <Countdown targetDate={new Date('2026-11-01T14:00:00')} />
+              <Countdown targetDate={new Date('2026-09-26T13:00:00')} />
             </div>
           </div>
 
@@ -110,7 +110,11 @@ const HeroSection = () => {
               {/* Photo container */}
               <div className="w-full h-full rounded-full overflow-hidden shadow-xl border-4 border-background">
                 <img
-                  src={coupleVeil}
+                  src={couple_accolade}
+                  style={{
+                    transform: 'scale(2) translate(-28px, 30px) rotateY(180deg)',
+                    // transform: 'scale(2) translate(28px, 30px)',
+                  }}
                   alt="Christian et Sarah"
                   className="w-full h-full object-cover"
                 />
