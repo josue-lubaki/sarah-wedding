@@ -1,4 +1,4 @@
-import { Heart, Loader2, CheckCircle } from 'lucide-react';
+import { Heart, Loader2, CheckCircle, Info } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -158,9 +158,12 @@ const RSVPSection = () => {
           <h2 className="font-script text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">
             Répondez S'il Vous Plaît
           </h2>
-          <p className="font-serif text-muted-foreground max-w-lg mx-auto">
+          <p className="font-serif text-muted-foreground max-w-lg mx-auto text-sm md:text-base">
             Veuillez confirmer votre présence avant le 1er septembre 2026.
             Nous avons hâte de célébrer ce jour spécial avec vous !
+          </p>
+          <p className="font-serif text-sm md:text-base text-primary max-w-xl mx-auto mt-3 italic">
+            Note : Un virement Interac de <strong className="font-sans font-semibold text-primary">{WEDDING_CONFIG.rsvp.confirmationFee}$</strong> par personne est requis pour confirmer et finaliser officiellement votre présence (remboursable intégralement en cas d'annulation).
           </p>
         </div>
 
@@ -172,9 +175,22 @@ const RSVPSection = () => {
               <h3 className="font-script text-3xl md:text-4xl text-foreground mb-4">
                 Merci beaucoup !
               </h3>
-              <p className="font-serif text-muted-foreground mb-6">
-                Votre réponse a été enregistrée avec succès. Nous sommes impatients de vous voir à notre mariage !
-              </p>
+              <div className="font-serif text-sm text-muted-foreground max-w-md mx-auto space-y-4 mb-8">
+                <p>
+                  Votre réponse a été pré-enregistrée.
+                </p>
+                <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 text-left">
+                  <p className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                    <Info className="w-4 h-4 text-primary" /> Rappel important :
+                  </p>
+                  <p className="text-xs leading-relaxed text-muted-foreground">
+                    Pour finaliser et valider officiellement votre place, n'oubliez pas d'effectuer le virement Interac obligatoire de <strong className="font-sans font-semibold text-foreground">{WEDDING_CONFIG.rsvp.confirmationFee}$</strong> par personne à l'adresse <strong className="font-sans font-semibold text-foreground">{WEDDING_CONFIG.interac.email}</strong>.
+                  </p>
+                  <p className="text-[11px] text-muted-foreground mt-2 italic">
+                    Veuillez inscrire le(s) nom(s) complet(s) des personnes concernées dans la description du virement.
+                  </p>
+                </div>
+              </div>
               <Button
                 onClick={() => setSubmitState('idle')}
                 variant="outline"
@@ -306,6 +322,19 @@ const RSVPSection = () => {
                         </FormItem>
                       )}
                     />
+                  )}
+
+                  {/* Dynamic payment notice and calculator */}
+                  {willAttend === 'yes' && (
+                    <div className="flex gap-3 bg-primary/5 border border-primary/20 rounded-lg p-4 font-serif text-[14px]">
+                      <Info className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-semibold text-foreground mb-1 text-[17px]">Montant à transférer pour confirmation :</p>
+                        <p className="text-muted-foreground leading-relaxed text-[15px]">
+                          Pour valider la présence de <strong className="text-foreground font-sans font-bold text-[13px]">{1 + Number(form.watch('numberOfGuests') || 0)} personne(s)</strong>, veuillez effectuer un virement Interac de <strong className="text-primary font-sans font-bold text-[13px]">{(1 + Number(form.watch('numberOfGuests') || 0)) * WEDDING_CONFIG.rsvp.confirmationFee}$</strong> à l'adresse <strong className="text-foreground font-sans font-semibold text-[13px]">{WEDDING_CONFIG.interac.email}</strong>.
+                        </p>
+                      </div>
+                    </div>
                   )}
 
                   {/* Special message */}

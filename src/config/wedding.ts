@@ -20,5 +20,6 @@ export const WEDDING_CONFIG = {
   rsvp: {
     maxGuests: 10,
     minGuestNameLength: 2,
+    confirmationFee: 100,
   },
 } as const;

@@ -17,7 +17,7 @@ const Navigation = () => {
     { label: 'Accueil', href: '#accueil' },
     { label: 'Notre Histoire', href: '#histoire' },
     { label: 'Événement', href: '#evenement' },
-    { label: 'Cadeau', href: '#interac' },
+    { label: 'Confirmation & Cadeaux', href: '#interac' },
     { label: 'RSVP', href: '#rsvp' },
     { label: 'Galerie', href: '#galerie' },
     { label: 'Invitation', href: '#invitation' },
