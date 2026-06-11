@@ -83,7 +83,7 @@ const InteracSection = () => {
                   Cadeaux & Intentions
                 </h3>
                 <p className="font-serif text-sm md:text-base text-muted-foreground mb-4 leading-relaxed">
-                  Votre présence et vos vœux sont ce qui nous importe le plus. Si vous désirez toutefois nous témoigner votre soutien par un cadeau, sachez que <strong className="text-foreground font-semibold">nous acceptons avec reconnaissance tout type de présent</strong>.
+                  Votre présence et vos vœux sont ce qui nous importe le plus. Si vous désirez toutefois nous témoigner votre soutien par un cadeau, sachez que <strong className="text-foreground font-semibold">nous acceptons avec reconnaissance tout type de présent, avec une préférence pour les contributions monétaires</strong> (virements Interac ou enveloppes).
                 </p>
                 <div className="font-serif text-sm md:text-base text-muted-foreground mb-6 space-y-3">
                   <p className="flex items-start gap-2">

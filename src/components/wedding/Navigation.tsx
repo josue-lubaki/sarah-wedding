@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Heart } from 'lucide-react';
+import { checkIsVip } from '@/config/wedding';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,14 +14,14 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isVip = checkIsVip();
   const navItems = [
     { label: 'Accueil', href: '#accueil' },
     { label: 'Notre Histoire', href: '#histoire' },
     { label: 'Événement', href: '#evenement' },
-    { label: 'Confirmation & Cadeaux', href: '#interac' },
+    ...(!isVip ? [{ label: 'Confirmation & Cadeaux', href: '#interac' }] : []),
     { label: 'RSVP', href: '#rsvp' },
     { label: 'Galerie', href: '#galerie' },
-    { label: 'Invitation', href: '#invitation' },
   ];
 
   return (

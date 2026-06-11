@@ -22,7 +22,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { WEDDING_CONFIG } from '@/config/wedding';
+import { WEDDING_CONFIG, checkIsVip } from '@/config/wedding';
 
 // ── RSVP schema ─────────────────────────────────────────────────────────────
 const rsvpFormSchema = z.object({
@@ -69,6 +69,7 @@ type CancelState = 'idle' | 'loading' | 'success' | 'error';
 const RSVPSection = () => {
   const [submitState, setSubmitState] = useState<SubmitState>('idle');
   const [cancelState, setCancelState] = useState<CancelState>('idle');
+  const isVip = checkIsVip();
 
   const cancellationFormId = WEDDING_CONFIG.formspree.cancellationFormId;
 
@@ -162,9 +163,11 @@ const RSVPSection = () => {
             Veuillez confirmer votre présence avant le 1er septembre 2026.
             Nous avons hâte de célébrer ce jour spécial avec vous !
           </p>
-          <p className="font-serif text-sm md:text-base text-primary max-w-xl mx-auto mt-3 italic">
-            Note : Un virement Interac de <strong className="font-sans font-semibold text-primary">{WEDDING_CONFIG.rsvp.confirmationFee}$</strong> par personne est requis pour confirmer et finaliser officiellement votre présence (remboursable intégralement en cas d'annulation).
-          </p>
+          {!isVip && (
+            <p className="font-serif text-sm md:text-base text-primary max-w-xl mx-auto mt-3 italic">
+              Note : Un virement Interac de <strong className="font-sans font-semibold text-primary">{WEDDING_CONFIG.rsvp.confirmationFee}$</strong> par personne est requis pour confirmer et finaliser officiellement votre présence (remboursable intégralement en cas d'annulation).
+            </p>
+          )}
         </div>
 
         <div className="max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
@@ -175,22 +178,28 @@ const RSVPSection = () => {
               <h3 className="font-script text-3xl md:text-4xl text-foreground mb-4">
                 Merci beaucoup !
               </h3>
-              <div className="font-serif text-sm text-muted-foreground max-w-md mx-auto space-y-4 mb-8">
-                <p>
-                  Votre réponse a été pré-enregistrée.
+              {isVip ? (
+                <p className="font-serif text-muted-foreground mb-8">
+                  Votre réponse a été enregistrée avec succès. Nous sommes impatients de vous voir à notre mariage !
                 </p>
-                <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 text-left">
-                  <p className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                    <Info className="w-4 h-4 text-primary" /> Rappel important :
+              ) : (
+                <div className="font-serif text-sm text-muted-foreground max-w-md mx-auto space-y-4 mb-8">
+                  <p>
+                    Votre réponse a été pré-enregistrée.
                   </p>
-                  <p className="text-xs leading-relaxed text-muted-foreground">
-                    Pour finaliser et valider officiellement votre place, n'oubliez pas d'effectuer le virement Interac obligatoire de <strong className="font-sans font-semibold text-foreground">{WEDDING_CONFIG.rsvp.confirmationFee}$</strong> par personne à l'adresse <strong className="font-sans font-semibold text-foreground">{WEDDING_CONFIG.interac.email}</strong>.
-                  </p>
-                  <p className="text-[11px] text-muted-foreground mt-2 italic">
-                    Veuillez inscrire le(s) nom(s) complet(s) des personnes concernées dans la description du virement.
-                  </p>
+                  <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 text-left">
+                    <p className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                      <Info className="w-4 h-4 text-primary" /> Rappel important :
+                    </p>
+                    <p className="text-xs leading-relaxed text-muted-foreground">
+                      Pour finaliser et valider officiellement votre place, n'oubliez pas d'effectuer le virement Interac obligatoire de <strong className="font-sans font-semibold text-foreground">{WEDDING_CONFIG.rsvp.confirmationFee}$</strong> par personne à l'adresse <strong className="font-sans font-semibold text-foreground">{WEDDING_CONFIG.interac.email}</strong>.
+                    </p>
+                    <p className="text-[11px] text-muted-foreground mt-2 italic">
+                      Veuillez inscrire le(s) nom(s) complet(s) des personnes concernées dans la description du virement.
+                    </p>
+                  </div>
                 </div>
-              </div>
+              )}
               <Button
                 onClick={() => setSubmitState('idle')}
                 variant="outline"
@@ -325,7 +334,7 @@ const RSVPSection = () => {
                   )}
 
                   {/* Dynamic payment notice and calculator */}
-                  {willAttend === 'yes' && (
+                  {willAttend === 'yes' && !isVip && (
                     <div className="flex gap-3 bg-primary/5 border border-primary/20 rounded-lg p-4 font-serif text-[14px]">
                       <Info className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                       <div>

@@ -7,18 +7,21 @@ import RSVPSection from '@/components/wedding/RSVPSection';
 import GallerySection from '@/components/wedding/GallerySection';
 import QRCodeSection from '@/components/wedding/QRCodeSection';
 import Footer from '@/components/wedding/Footer';
+import { checkIsVip } from '@/config/wedding';
 
 const Index = () => {
+  const isVip = checkIsVip();
+
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
       <StorySection />
       <EventSection />
-      <InteracSection />
+      {!isVip && <InteracSection />}
       <RSVPSection />
       <GallerySection />
-      <QRCodeSection />
+      {/* <QRCodeSection /> */}
       <Footer />
     </main>
   );

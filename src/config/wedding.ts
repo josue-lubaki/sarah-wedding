@@ -23,3 +23,11 @@ export const WEDDING_CONFIG = {
     confirmationFee: 100,
   },
 } as const;
+
+export const checkIsVip = () => {
+  if (typeof window === 'undefined') return false;
+  return (
+    window.location.hostname === 'vip.cs-wedding.ca' ||
+    window.location.search.includes('vip')
+  );
+};
